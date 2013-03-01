@@ -1,4 +1,4 @@
-# Simple::Class::Loader
+# SimpleClassLoader
 
 SimpleClassLoader for JRuby
 
