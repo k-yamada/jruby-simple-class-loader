@@ -8,7 +8,6 @@ java_import "java.net.URLClassLoader"
 class SimpleClassLoader
 
   def initialize(jar_paths)
-    pp jar_paths
     jar_urls = get_jar_urls(jar_paths)
     @class_loader = java.net.URLClassLoader.new(jar_urls)
   end
@@ -31,7 +30,7 @@ class SimpleClassLoader
   end
 
   def add_jar(jar_path)
-    @class_loader.addURL(java.io.File.new(jar_path).toURL)
+    @class_loader.addURL(get_url(jar_path))
   end
 
 end
