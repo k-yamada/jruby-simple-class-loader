@@ -6,19 +6,34 @@ SimpleClassLoader for JRuby
 
 Add this line to your application's Gemfile:
 
-    gem 'simple-class-loader'
+```
+gem 'simple-class-loader'
+```
 
 And then execute:
 
-    $ bundle
+```
+$ bundle
+```
 
 Or install it yourself as:
 
-    $ gem install simple-class-loader
+```
+$ gem install simple-class-loader
+```
 
 ## Usage
 
-TODO: Write usage instructions here
+```
+require 'simple-class-loader'
+
+JAR_JUNIT_PATH = "#{File.dirname(__FILE__)}/jar/junit-4.10.jar"
+JAR_TEST_CASE  = "#{File.dirname(__FILE__)}/jar/TestCaseA.jar"
+PACKAGE        = "com.scirocco.cloud.test.ADTest"
+
+loader    = SimpleClassLoader.new([JAR_JUNIT_PATH, JAR_TEST_CASE])
+test_case = loader.load_class(PACKAGE)
+```
 
 ## Contributing
 
